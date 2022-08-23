@@ -1,0 +1,32 @@
+12:04:56 **** Incremental Build of configuration Debug for project 009USATR3Interrupt ****
+make -j12 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F407VETx -c -I../Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Src/main.o"
+../Src/main.c: In function 'main':
+../Src/main.c:38:5: warning: implicit declaration of function 'USART3_IRQHandler' [-Wimplicit-function-declaration]
+   38 |     USART3_IRQHandler();
+      |     ^~~~~~~~~~~~~~~~~
+../Src/main.c: At top level:
+../Src/main.c:43:6: warning: conflicting types for 'USART3_IRQHandler'
+   43 | void USART3_IRQHandler(void)
+      |      ^~~~~~~~~~~~~~~~~
+../Src/main.c:38:5: note: previous implicit declaration of 'USART3_IRQHandler' was here
+   38 |     USART3_IRQHandler();
+      |     ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "009USATR3Interrupt.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\cdac\Desktop\MicrocontrollerARM2\009USATR3Interrupt\STM32F407VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="009USATR3Interrupt.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 009USATR3Interrupt.elf
+ 
+arm-none-eabi-size   009USATR3Interrupt.elf 
+arm-none-eabi-objdump -h -S  009USATR3Interrupt.elf  > "009USATR3Interrupt.list"
+   text	   data	    bss	    dec	    hex	filename
+   5300	    108	   1588	   6996	   1b54	009USATR3Interrupt.elf
+Finished building: default.size.stdout
+ 
+Finished building: 009USATR3Interrupt.list
+ 
+12:05:11 **** Incremental Build of configuration Debug for project 009USATR3Interrupt ****
+make -j12 all 
+arm-none-eabi-size   009USATR3Interrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5300	    108	   1588	   6996	   1b54	009USATR3Interrupt.elf
+Finished building: default.size.stdout
+ 
